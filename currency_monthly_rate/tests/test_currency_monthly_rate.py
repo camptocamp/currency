@@ -17,7 +17,7 @@ class TestCurrencyMonthlyRate(SavepointCase):
 
         # as fields.Date.today() only calls date.today() and then converts it
         # to ORM format string, we don't need it here
-        cls.year = unicode(date.today().year)
+        cls.year = str(date.today().year)
 
         monthly_rate = cls.env['res.currency.rate.monthly']
         rate = cls.env['res.currency.rate']

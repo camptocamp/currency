@@ -6,6 +6,6 @@ In order to compute any amount in another currency using monthly rates, you
 only have to pass `monthly_rate=True` in the context of `res.currency.compute`
 method :
 
-```python
+.. code:: python
+
     to_amount = from_currency.with_context(monthly_rate=True).compute(from_amount, to_currency)
-```
