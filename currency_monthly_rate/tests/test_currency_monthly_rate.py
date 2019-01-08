@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
@@ -9,14 +10,14 @@ class TestCurrencyMonthlyRate(SavepointCase):
 
     @classmethod
     def setUpClass(cls):
-        super().setUpClass()
+        super(TestCurrencyMonthlyRate, cls).setUpClass()
 
         cls.usd = cls.env.ref('base.USD')
         cls.eur = cls.env.ref('base.EUR')
 
         # as fields.Date.today() only calls date.today() and then converts it
         # to ORM format string, we don't need it here
-        cls.year = str(date.today().year)
+        cls.year = unicode(date.today().year)
 
         monthly_rate = cls.env['res.currency.rate.monthly']
         rate = cls.env['res.currency.rate']
