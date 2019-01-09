@@ -63,8 +63,7 @@ class ResCurrencyRateMonthly(models.Model):
         return fields.Date.from_string(
             fields.Date.context_today(self)).strftime('%Y')
 
-    name = fields.Date(compute='_compute_name', store=True, required=True,
-                       index=True)
+    name = fields.Date(compute='_compute_name', store=True, index=True)
     year = fields.Char(size=4, required=True,
                        default=lambda self: self._default_get_year())
     month = fields.Selection([('01', u'January'),
